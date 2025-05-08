@@ -15,12 +15,12 @@ b = sum(demand);
 
 if a==b
     fprintf('Problem Balanced\n');
-elseif a<b
-        cost(end+1,:)=zeros(1,n);
-        supply(end+1)=b-a;
-else
-    cost(:,end+1) = zeros(m,1);
+elseif a>b   
+    cost(:,end+1) = zeros(1,m);
     demand(end+1) = a-b;
+else
+    cost(end+1,:) = zeros(n,1);
+    supply(end+1) = b-a;
 end
 
 [m,n] = size(cost);
